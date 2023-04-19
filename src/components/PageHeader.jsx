@@ -1,8 +1,10 @@
-import React from 'react'
+import React from "react";
 
 const PageHeader = () => {
   return (
-    <div>Page Header</div>
-  )
-}
+    <div>
+      <div>Page Header</div>
+    </div>
+  );
+};
 export default PageHeader;

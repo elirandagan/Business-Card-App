@@ -1,11 +1,16 @@
 import './App.css';
-import PageHeader from './components/PageHeader';
+import MuiComponent from './sandbox/components/MuiComponent';
+// import PageHeader from './components/PageHeader';
+// import LogicComponent from './sandbox/components/LogicComponent';
+// import StylesComponent from './sandbox/components/StylesComponent';
 
 function App () {
   return (
     <div className="App">
-      <p>KIMMMM</p>
-      <PageHeader />
+      {/* <PageHeader />
+      <LogicComponent /> */}
+      {/* <StylesComponent /> */}
+      <MuiComponent />
     </div>
   );
 }
