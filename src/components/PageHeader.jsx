@@ -2,9 +2,10 @@ import React from "react";
 
 const PageHeader = () => {
   return (
-    <div>
+    <>
       <div>Page Header</div>
-    </div>
+      <div>Subtitle</div>
+    </>
   );
 };
 export default PageHeader;

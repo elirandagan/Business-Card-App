@@ -1,16 +1,12 @@
 import './App.css';
-import MuiComponent from './sandbox/components/MuiComponent';
-// import PageHeader from './components/PageHeader';
-// import LogicComponent from './sandbox/components/LogicComponent';
-// import StylesComponent from './sandbox/components/StylesComponent';
+// import CardComponent from './cards/components/card/Card';
+import Sandbox from './sandbox/Sandbox';
 
 function App () {
   return (
     <div className="App">
-      {/* <PageHeader />
-      <LogicComponent /> */}
-      {/* <StylesComponent /> */}
-      <MuiComponent />
+      <Sandbox />
+      {/* <CardComponent /> */}
     </div>
   );
 }
