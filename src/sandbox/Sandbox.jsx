@@ -1,9 +1,15 @@
 import React from 'react'
-import Father from './props/Father'
+import FatherEvents from './events/Father'
+// import Events from './events/Events'
+// import Loops from './loops/Loops'
+// import Father from './props/Father'
 
 const Sandbox = () => {
   return (
-    <Father />
+    // <Father />
+    // <Loops />
+    // <Events />
+    <FatherEvents />
   )
 }
 
