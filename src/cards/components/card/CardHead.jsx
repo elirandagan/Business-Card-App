@@ -1,5 +1,6 @@
 import { CardMedia } from "@mui/material";
 import React from "react";
+import imageType from "../../models/types/imageType";
 
 const CardHead = ({ image }) => {
   return (
@@ -13,5 +14,9 @@ const CardHead = ({ image }) => {
     </>
   );
 };
+
+CardHead.propTypes = {
+  image: imageType.isRequired,
+}
 
 export default CardHead;

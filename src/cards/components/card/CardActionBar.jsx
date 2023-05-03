@@ -4,8 +4,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CallIcon from "@mui/icons-material/Call";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { func, string } from "prop-types";
 
-const CardActionBar = ({cardId}) => {
+const CardActionBar = ({ cardId, onLike, onDelete, onEdit }) => {
   return (
     <>
       <CardActions
@@ -13,10 +14,10 @@ const CardActionBar = ({cardId}) => {
         sx={{ pt: 0, justifyContent: "space-between" }}
       >
         <Box>
-          <IconButton aria-label="delete">
+          <IconButton onClick={() => onDelete(cardId)} aria-label="delete">
             <DeleteIcon />
           </IconButton>
-          <IconButton aria-label="edit">
+          <IconButton onClick={() => onEdit(cardId)} aria-label="edit">
             <EditIcon />
           </IconButton>
         </Box>
@@ -24,13 +25,20 @@ const CardActionBar = ({cardId}) => {
           <IconButton aria-label="call">
             <CallIcon />
           </IconButton>
-          <IconButton aria-label="like">
+          <IconButton onClick={() => onLike(cardId)} aria-label="like">
             <FavoriteIcon />
           </IconButton>
         </Box>
       </CardActions>
     </>
   );
+};
+
+CardActionBar.propTypes = {
+  cardId: string.isRequired,
+  onLike: func.isRequired,
+  onDelete: func.isRequired,
+  onEdit: func.isRequired,
 };
 
 export default CardActionBar;

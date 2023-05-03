@@ -6,6 +6,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
+import cardType from "../../models/types/cardType";
 
 const CardBody = ({ card }) => {
   const { street, houseNumber, city } = card.address;
@@ -51,6 +52,10 @@ const CardBody = ({ card }) => {
       </CardContent>
     </>
   );
+};
+
+CardBody.propTypes = {
+  card: cardType.isRequired,
 };
 
 export default CardBody;
