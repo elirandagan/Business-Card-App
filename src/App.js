@@ -1,12 +1,16 @@
 import './App.css';
-import Cards from './cards/components/Cards';
-// import Sandbox from './sandbox/Sandbox';
+// import CardsPage from './cards/pages/CardsPage';
+// import AboutPage from './pages/AboutPage';
+// import Cards from './cards/components/Cards';
+import Sandbox from './sandbox/Sandbox';
 
 function App () {
   return (
     <div className="App">
-      {/* <Sandbox /> */}
-      <Cards />
+      <Sandbox />
+      {/* <Cards /> */}
+      {/* <CardsPage /> */}
+      {/* <AboutPage /> */}
     </div>
   );
 }

@@ -1,86 +1,11 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
 import CardComponent from "./card/Card";
+import { arrayOf } from "prop-types";
+import cardType from "../models/types/cardType";
 
-const Cards = () => {
-  const cards = [
-    {
-      _id: "63765801e20ed868a69a62c4a",
-      title: "first",
-      subtitle: "subtitle",
-      description: "testing 123",
-      phone: "050-1111111",
-      email: "test@gmail.com",
-      web: "https://www.test.co.il",
-      image: {
-        url: "https://cdn.pixabay.com/photo/2016/04/20/08/21/entrepreneur-1340649_960_720.jpg",
-        alt: "Business card image",
-      },
-      address: {
-        state: "",
-        country: "country",
-        city: "tel aviv",
-        street: "shinkin",
-        houseNumber: 3,
-        zip: 1234,
-      },
-      bizNumber: 1_000_000,
-      user_id: "63765801e20ed868a69a62c2",
-      createdAt: new Date().toLocaleDateString(),
-      likes:["43"],
-    },
-    {
-      _id: "63765801e20ed868a69a62c4b",
-      title: "second",
-      subtitle: "subtitle",
-      description: "testing 123",
-      phone: "050-2222222",
-      email: "test@gmail.com",
-      web: "https://www.test.co.il",
-      image: {
-        url: "https://cdn.pixabay.com/photo/2016/04/20/08/21/entrepreneur-1340649_960_720.jpg",
-        alt: "Business card image",
-      },
-      address: {
-        state: "",
-        country: "country",
-        city: "tel aviv",
-        street: "shinkin",
-        houseNumber: 3,
-        zip: 1234,
-      },
-      bizNumber: 1_000_001,
-      user_id: "63765801e20ed868a69a62c2",
-      createdAt: new Date().toLocaleDateString(),
-      likes:["100"],
-    },
-    {
-      _id: "63765801e20ed868a69a62c4f",
-      title: "third",
-      subtitle: "subtitle",
-      description: "testing 123",
-      phone: "050-3333333",
-      email: "test@gmail.com",
-      web: "https://www.test.co.il",
-      image: {
-        url: "https://cdn.pixabay.com/photo/2016/04/20/08/21/entrepreneur-1340649_960_720.jpg",
-        alt: "Business card image",
-      },
-      address: {
-        state: "",
-        country: "country",
-        city: "tel aviv",
-        street: "shinkin",
-        houseNumber: 3,
-        zip: 1234,
-      },
-      bizNumber: 1_000_002,
-      user_id: "63765801e20ed868a69a62c2",
-      createdAt: new Date().toLocaleDateString(),
-      likes:["74"],
-    },
-  ];
-  
+const Cards = ({cards}) => {
+
   const onLike = (cardId) => console.log(`you liked card no:${cardId}`);
   const onDelete = (cardId) => console.log(`you deleted card no:${cardId}`);
   const onEdit = (cardId) => console.log(`you edited card no:${cardId}`);
@@ -104,5 +29,9 @@ const Cards = () => {
     </Grid>
   );
 };
+
+Cards.propTypes = {
+  cards: arrayOf(cardType).isRequired,
+}
 
 export default Cards;
