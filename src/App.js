@@ -1,14 +1,15 @@
 import './App.css';
 import Layout from './layout/Layout';
-import CardsPage from './cards/pages/CardsPage';
-
-// import Sandbox from './sandbox/Sandbox';
+import {BrowserRouter} from 'react-router-dom';
+import Router from './routes/Router';
 
 function App () {
   return (
-    <Layout>
-      <CardsPage />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Router />
+      </Layout>
+    </BrowserRouter>
   );
 }
 
