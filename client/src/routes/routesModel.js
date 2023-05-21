@@ -4,6 +4,7 @@ const ROUTES = {
     CARDS: "/cards",
     SANDBOX:"/sandbox",
     FAV_CARDS: "/favorites",
+    SIGNUP:"/signup",
 };
 
 export default ROUTES;

@@ -4,6 +4,7 @@ import ROUTES from "./routesModel";
 import CardsPage from "../cards/pages/CardsPage";
 import AboutPage from "../pages/AboutPage";
 import ErrorPage from "../pages/ErrorPage";
+import SignUpPage from "../users/pages/SignUpPage";
 import Sandbox from "../sandbox/Sandbox";
 
 const Router = () => {
@@ -13,6 +14,7 @@ const Router = () => {
       <Route path={ROUTES.CARDS} element={<CardsPage />} />
       <Route path={ROUTES.ABOUT} element={<AboutPage />} />
       <Route path={ROUTES.SANDBOX} element={<Sandbox />} />
+      <Route path={ROUTES.SIGNUP} element={<SignUpPage />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
