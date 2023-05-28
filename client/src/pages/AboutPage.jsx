@@ -10,7 +10,7 @@ const AboutPage = () => {
         title="About Page"
         subtitle="On this page you can find explanations about using the application"
       />
-
+      
       <Grid container spacing={2}>
         <Grid item xs={12} md={8} alignSelf="center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,

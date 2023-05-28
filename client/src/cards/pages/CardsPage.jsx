@@ -1,27 +1,15 @@
-import { Container} from "@mui/material";
-import React, { useState } from "react";
+import { Container } from "@mui/material";
+import React from "react";
 import PageHeader from "../../components/PageHeader";
 import { useEffect } from "react";
-import { getCards } from "../services/cardService";
 import CardsFeedback from "../components/CardsFeedback";
+import useCards from "../hooks/useCards";
 
 const CardsPage = () => {
-  const [cards, setCards] = useState(null);
-  const [error, setError] = useState(null);
-  const [pending, setPending] = useState(false);
+  const { pending, error, cards, handleGetCards } = useCards();
 
   useEffect(() => {
-    setPending(true);
-    getCards()
-      .then((data) => {
-        setPending(false);
-        setCards(data);
-      })
-      .catch((error) => {
-        console.log(error);
-        setPending(false);
-        setError(error);
-      });
+    handleGetCards();
   }, []);
 
   return (
