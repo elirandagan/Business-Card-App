@@ -4,10 +4,11 @@ import useAxios from '../../hooks/useAxios';
 
 const useCards = () => {
   const [cards, setCards] = useState (null);
+  const [card, setCard] = useState (null);
   const [error, setError] = useState (null);
   const [pending, setPending] = useState (false);
 
-  useAxios();
+  useAxios ();
 
   const requestStatus = (pending, error, cards) => {
     setPending (pending);

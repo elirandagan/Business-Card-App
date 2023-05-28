@@ -5,6 +5,7 @@ const SANDBOX_ROUTES = {
   HOOKS: 'hooks',
   USE_COUNTER: 'use-counter',
   USE_CALLBACK_BTN: 'use-callback-btn',
+  USE_CONTEXT: 'use-context',
 };
 
 export default SANDBOX_ROUTES;

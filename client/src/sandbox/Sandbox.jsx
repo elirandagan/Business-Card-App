@@ -27,6 +27,11 @@ const Sandbox = () => {
             to={SANDBOX_ROUTES.USE_CALLBACK_BTN}
             color="black"
           />
+           <NavItem
+            label="use-context"
+            to={SANDBOX_ROUTES.USE_CONTEXT}
+            color="black"
+          />
         </Toolbar>
       </AppBar>
 

@@ -14,6 +14,7 @@ import SANDBOX_ROUTES from "./sandboxRoutesModel";
 import LifeCycleHooks from "../sandbox/lifeCycleHooks/LifeCycleHooks";
 import UseCounter from "../sandbox/useCounter/UseCounter";
 import UseCallBackComp from "../sandbox/memozation/UseCallBackComp";
+import A from "../sandbox/use-context/exeTwo/components/A";
 
 const Router = () => {
   return (
@@ -30,6 +31,7 @@ const Router = () => {
         <Route path={SANDBOX_ROUTES.HOOKS} element={<LifeCycleHooks />} />
         <Route path={SANDBOX_ROUTES.USE_COUNTER} element={<UseCounter />} />
         <Route path={SANDBOX_ROUTES.USE_CALLBACK_BTN} element={<UseCallBackComp />} />
+        <Route path={SANDBOX_ROUTES.USE_CONTEXT} element={<A />} />
       </Route>
       <Route path="*" element={<ErrorPage />} />
     </Routes>
