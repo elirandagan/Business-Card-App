@@ -19,3 +19,48 @@ export const getCard = async id => {
     return Promise.reject (error.messgae);
   }
 };
+
+export const getMyCards = async () => {
+  try {
+    const {data} = await axios.get (`${apiUrl}/cards/my-cards`);
+    return data;
+  } catch (error) {
+    return Promise.reject (error.messgae);
+  }
+};
+
+export const creatCard = async card => {
+  try {
+    const {data} = await axios.post (`${apiUrl}/cards`, card);
+    return data;
+  } catch (error) {
+    return Promise.reject (error.messgae);
+  }
+};
+
+export const editCard = async card => {
+  try {
+    const {data} = await axios.put (`${apiUrl}/cards`, card);
+    return data;
+  } catch (error) {
+    return Promise.reject (error.messgae);
+  }
+};
+
+export const changeLikeStatus = async cardId => {
+  try {
+    const {data} = await axios.put (`${apiUrl}/cards/${cardId}`);
+    return data;
+  } catch (error) {
+    return Promise.reject (error.messgae);
+  }
+};
+
+export const deleteCard = async cardId => {
+  try {
+    const {data} = await axios.delete (`${apiUrl}/cards/${cardId}`);
+    return data;
+  } catch (error) {
+    return Promise.reject (error.messgae);
+  }
+};
