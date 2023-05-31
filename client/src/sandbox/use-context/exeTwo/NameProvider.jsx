@@ -11,6 +11,8 @@ export const NameProvider = ({ children }) => {
     setName("Eliran");
   }, []);
 
+  // const obj = {{ name, setName }}
+
   return (
     <NameContext.Provider value={{ name, setName }}>
       {children}

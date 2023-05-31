@@ -11,7 +11,7 @@ const CardsPage = () => {
   useEffect(() => {
     handleGetCards();
   }, []);
-
+  
   return (
     <Container>
       <PageHeader

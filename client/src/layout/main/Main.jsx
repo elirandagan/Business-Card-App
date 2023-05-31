@@ -1,13 +1,16 @@
 import { node } from "prop-types";
 import Paper from "@mui/material/Paper";
+import { useTheme } from "../../prvoiders/ThemePrvoider";
 
 const Main = ({ children }) => {
+  const { isDark } = useTheme();
   return (
     <Paper
       sx={{
         minHeight: "90vh",
-        backgroundColor: "#e3f2fd",
-      }}>
+        backgroundColor: isDark ? "#333333" : "#e3f2fd",
+      }}
+    >
       {children}
     </Paper>
   );
