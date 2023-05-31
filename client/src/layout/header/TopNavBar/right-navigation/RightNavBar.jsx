@@ -8,7 +8,7 @@ import MoreButton from "./MoreButton";
 import Logged from "./Logged";
 import NotLogged from "./NotLogged";
 import Menu from "./Menu";
-import { useTheme } from "../../../../prvoiders/ThemePrvoider";
+import { useTheme } from "../../../../providers/ThemePrvoider";
 
 const RightNavBar = () => {
   const { isDark, toggleDarkMode } = useTheme();

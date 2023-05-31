@@ -5,7 +5,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
-import {useTheme} from "../../../../prvoiders/ThemePrvoider"
+import {useTheme} from "../../../../providers/ThemePrvoider"
 
 const SearchBar = () => {
   const { isDark } = useTheme();

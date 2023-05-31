@@ -1,6 +1,6 @@
 import { node } from "prop-types";
 import Paper from "@mui/material/Paper";
-import { useTheme } from "../../prvoiders/ThemePrvoider";
+import { useTheme } from "../../providers/ThemePrvoider";
 
 const Main = ({ children }) => {
   const { isDark } = useTheme();

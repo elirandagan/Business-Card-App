@@ -1,20 +1,18 @@
 import axios from 'axios';
+import {useSnack} from '../providers/SnackbarProvider';
 
 const useAxios = () => {
+  const {setSnack} = useSnack ();
   axios.interceptors.request.use (data => {
-    console.log (data);
-    console.log ('Entered useAxios request');
     return Promise.resolve (data);
   }, null);
 
   axios.interceptors.response.use (
     data => {
-      console.log (data);
-      console.log ('Entered useAxios response');
       return Promise.resolve (data);
     },
     error => {
-      console.log ('Entered useAxios reponse - error');
+      setSnack ('error', error.message);
       return Promise.reject (error);
     }
   );
