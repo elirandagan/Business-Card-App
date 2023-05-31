@@ -32,6 +32,11 @@ const Sandbox = () => {
             to={SANDBOX_ROUTES.USE_CONTEXT}
             color="black"
           />
+           <NavItem
+            label="forms"
+            to={SANDBOX_ROUTES.FORMS}
+            color="black"
+          />
         </Toolbar>
       </AppBar>
 
