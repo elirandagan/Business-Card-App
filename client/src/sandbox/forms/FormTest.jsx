@@ -8,7 +8,7 @@ import ROUTES from "../../routes/routesModel";
 
 const FormTest = () => {
   const INITIAL_FORM = {
-    first: "",
+    first: "Eliran",
     last: "",
   };
 
@@ -35,7 +35,7 @@ const FormTest = () => {
         onReset={rest.handleReset}
         styles={{ maxWidth: "450px" }}
         onChange={rest.validateForm}
-        to={ROUTES.SANDBOX}>
+        to={ROUTES.CARDS}>
         <Input
           label="first name"
           name="first"
