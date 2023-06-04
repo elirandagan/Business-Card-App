@@ -24,7 +24,7 @@ export const SnackbarProvider = ({ children }) => {
       <Snackbar
         open={isSnackbarOpen}
         onClose={() => setOpenSnackbar(false)}
-        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         autoHideDuration={5000}
       >
         <Alert severity={snackColor} variant={snackVariant}>

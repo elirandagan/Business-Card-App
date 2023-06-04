@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {getCards} from '../services/cardService';
+import {getCards, getCard} from '../services/cardService';
 import useAxios from '../../hooks/useAxios';
 
 const useCards = () => {
@@ -10,10 +10,11 @@ const useCards = () => {
 
   useAxios ();
 
-  const requestStatus = (pending, error, cards) => {
+  const requestStatus = (pending, error, cards, card) => {
     setPending (pending);
     setError (error);
     setCards (cards);
+    setCard (card);
   };
 
   const handleGetCards = async () => {
@@ -26,7 +27,17 @@ const useCards = () => {
     }
   };
 
-  return {cards, pending, error, handleGetCards};
+  const handleGetCard = async cardId => {
+    try {
+      setPending (true);
+      const card = await getCard (cardId);
+      requestStatus (false, null, null, card);
+    } catch (error) {
+      requestStatus (false, error, null, null);
+    }
+  };
+
+  return {cards, card, pending, error, handleGetCards, handleGetCard};
 };
 
 export default useCards;
