@@ -7,7 +7,6 @@ const useCards = () => {
   const [card, setCard] = useState (null);
   const [error, setError] = useState (null);
   const [pending, setPending] = useState (false);
-
   useAxios ();
 
   const requestStatus = (pending, error, cards, card) => {
@@ -21,9 +20,9 @@ const useCards = () => {
     try {
       setPending (true);
       const cards = await getCards ();
-      requestStatus (false, null, cards);
+      requestStatus (false, null, cards, null);
     } catch (error) {
-      requestStatus (false, error, null);
+      requestStatus (false, error, null, null);
     }
   };
 

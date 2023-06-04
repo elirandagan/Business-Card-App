@@ -24,6 +24,8 @@ CardFeedback.propTypes = {
   error: string,
   card: object,
   onDelete: func.isRequired,
+  onLike: func.isRequired,
+  onEdit: func.isRequired,
 };
 
 export default CardFeedback;
