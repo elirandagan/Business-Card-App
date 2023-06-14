@@ -8,6 +8,8 @@ const ROUTES = {
     SIGNUP:"/signup",
     LOGIN:"/login",
     CARD_INFO:"/card-info",
+    USER_PROFILE:"/user-profile",
+    // EDIT_PROFILE:"/edit-profile",
 };
 
 export default ROUTES;

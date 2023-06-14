@@ -2,21 +2,46 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";
 import { Container } from "@mui/material";
-import PageHeader from "../../components/PageHeader";
+import { useUser } from "../providers/UserProvider";
+import useForm from "../../forms/hooks/useForm";
+import useUsers from "./../hooks/useUsers";
+import signUpSchema from "../models/joi-schema/signUpSchema";
+import UserForm from "../components/UserForm";
+import initialSignUpForm from "../helpers/initial-forms/initialSignUpForm";
 
 const SignUpPage = () => {
-  // const user = null;
-  const user = true;
+  const { handleSignup } = useUsers();
+
+  const { value, ...rest } = useForm(
+    initialSignUpForm,
+    signUpSchema,
+    handleSignup
+  );
+
+  const { user } = useUser();
 
   if (user) {
     return <Navigate replace to={ROUTES.CARDS} />;
   }
 
   return (
-    <Container maxWidth="lg">
-      <PageHeader
-        title="Signup Page"
-        subtitle="In order to register, fill out the form and click the submit button."
+    <Container
+      sx={{
+        paddingTop: 8,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <UserForm
+        title="register user"
+        onSubmit={rest.onSubmit}
+        onReset={rest.handleReset}
+        onFormChange={rest.validateForm}
+        onInputChange={rest.handleChange}
+        data={value.data}
+        errors={value.errors}
+        setData={rest.setData}
       />
     </Container>
   );
