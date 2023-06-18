@@ -16,7 +16,7 @@ const LeftNavBar = () => {
       <Box sx={{ display: { xs: "none", md: "inline-flex" } }}>
         <NavItem label="About" to={ROUTES.ABOUT} />
         {user && user.isBusiness && (
-          <NavItem label="My Cards" to={ROUTES.CARDS} />
+          <NavItem label="My Cards" to={ROUTES.MAY_CARDS} />
         )}
         <NavItem label="Sandbox" to={ROUTES.SANDBOX} />
       </Box>

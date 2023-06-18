@@ -1,12 +1,9 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../../components/PageHeader";
-import CardComponent from "../components/card/Card";
 import useCards from "../hooks/useCards";
 import CardFeedback from "../components/card/CardFeedback";
-import Spinner from "../../components/Spinner";
-import Error from "../../components/Error";
 
 const CardDetailsPage = () => {
   const { id } = useParams();
@@ -20,7 +17,7 @@ const CardDetailsPage = () => {
   useEffect(() => {
     handleGetCard(id);
   }, []);
-  
+
   return (
     <Container maxWidth="lg">
       <PageHeader title="Card Details" subtitle={subTitle} />
@@ -32,14 +29,6 @@ const CardDetailsPage = () => {
           alignItems: "center",
         }}
       >
-        {/* {pending && <Spinner />}
-        {error && <Error errorMessage={error} />}
-        <CardComponent
-          card={card}
-          onEdit={onEdit}
-          onLike={onLike}
-          onDelete={onDelete}
-        /> */}
         <CardFeedback
           onEdit={onEdit}
           onLike={onLike}

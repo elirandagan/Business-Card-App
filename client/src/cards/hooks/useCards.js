@@ -1,6 +1,11 @@
-import {useState} from 'react';
-import {getCards, getCard} from '../services/cardService';
+import {useCallback, useState} from 'react';
+import {getCards, getCard, creatCard} from '../services/cardService';
 import useAxios from '../../hooks/useAxios';
+import {getMyCards} from '../services/cardService';
+import normalizeCard from '../helpers/normalization/normalizeCard';
+import {useSnack} from '../../providers/SnackbarProvider';
+import {useNavigate} from 'react-router-dom';
+import ROUTES from '../../routes/routesModel';
 
 const useCards = () => {
   const [cards, setCards] = useState (null);
@@ -8,6 +13,9 @@ const useCards = () => {
   const [error, setError] = useState (null);
   const [pending, setPending] = useState (false);
   useAxios ();
+
+  const {setSnake} = useSnack ();
+  const navigate = useNavigate ();
 
   const requestStatus = (pending, error, cards, card) => {
     setPending (pending);
@@ -36,7 +44,42 @@ const useCards = () => {
     }
   };
 
-  return {cards, card, pending, error, handleGetCards, handleGetCard};
+  const handleGetMyCards = useCallback (async () => {
+    try {
+      setPending (true);
+      const cards = await getMyCards ();
+      requestStatus (false, null, cards, null);
+    } catch (error) {
+      requestStatus (false, error, null, null);
+    }
+  }, []);
+
+  const handleCreateCard = useCallback (
+    async cardFromClient => {
+      try {
+        setPending (true);
+        const normalCard = normalizeCard (cardFromClient);
+        const card = await creatCard (normalCard);
+        requestStatus (false, null, null, card);
+        setSnake ('success', 'Your card been added!');
+        navigate (ROUTES.MAY_CARDS);
+      } catch (error) {
+        requestStatus (false, error, null, null);
+      }
+    },
+    [navigate, setSnake]
+  );
+
+  return {
+    cards,
+    card,
+    pending,
+    error,
+    handleGetCards,
+    handleGetCard,
+    handleGetMyCards,
+    handleCreateCard,
+  };
 };
 
 export default useCards;

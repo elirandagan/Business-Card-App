@@ -16,6 +16,8 @@ import UseCounter from "../sandbox/useCounter/UseCounter";
 import UseCallBackComp from "../sandbox/memozation/UseCallBackComp";
 import A from "../sandbox/use-context/exeTwo/components/A";
 import FormTest from "../sandbox/forms/FormTest";
+import MyCardsPage from "../cards/pages/MyCardsPage";
+import CreateCardPage from "../cards/pages/CreateCardPage";
 
 const Router = () => {
   return (
@@ -25,6 +27,8 @@ const Router = () => {
       <Route path={ROUTES.ABOUT} element={<AboutPage />} />
       <Route path={ROUTES.SIGNUP} element={<SignUpPage />} />
       <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+      <Route path={ROUTES.MAY_CARDS} element={<MyCardsPage />} />
+      <Route path={ROUTES.CREATE_CARD} element={<CreateCardPage />} />
       <Route path={`${ROUTES.CARD_INFO}/:id`} element={<CardDetailsPage />} />
       <Route path={ROUTES.SANDBOX} element={<Sandbox />}>
         <Route path={SANDBOX_ROUTES.LOOPS} element={<Loops />} />
