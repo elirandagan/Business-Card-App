@@ -12,7 +12,9 @@ const CardComponent = ({ card, onLike, onDelete, onEdit }) => {
   const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 280 }}>
-      <CardActionArea onClick={() => navigate(`${ROUTES.CARD_INFO}/${card._id}`)} >
+      <CardActionArea
+        onClick={() => navigate(`${ROUTES.CARD_INFO}/${card._id}`)}
+      >
         <CardHead image={card.image} />
         <CardBody card={card} />
       </CardActionArea>
@@ -21,6 +23,7 @@ const CardComponent = ({ card, onLike, onDelete, onEdit }) => {
         onDelete={onDelete}
         onEdit={onEdit}
         cardId={card._id}
+        userId={card.user_id}
       />
     </Card>
   );
