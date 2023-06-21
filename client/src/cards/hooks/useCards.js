@@ -14,7 +14,7 @@ const useCards = () => {
   const [pending, setPending] = useState (false);
   useAxios ();
 
-  const {setSnake} = useSnack ();
+  const {setSnack} = useSnack ();
   const navigate = useNavigate ();
 
   const requestStatus = (pending, error, cards, card) => {
@@ -61,13 +61,13 @@ const useCards = () => {
         const normalCard = normalizeCard (cardFromClient);
         const card = await creatCard (normalCard);
         requestStatus (false, null, null, card);
-        setSnake ('success', 'Your card been added!');
+        setSnack ('success', 'Your card been added!');
         navigate (ROUTES.MAY_CARDS);
       } catch (error) {
         requestStatus (false, error, null, null);
       }
     },
-    [navigate, setSnake]
+    [navigate, setSnack]
   );
 
   return {

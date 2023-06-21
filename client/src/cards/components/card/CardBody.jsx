@@ -13,7 +13,7 @@ const CardBody = ({ card }) => {
   return (
     <>
       <CardContent>
-        <CardHeader title="Title" subheader="subtitle" sx={{ p: 0, mb: 1 }} />
+        <CardHeader title={card.title} subheader={card.subtitle} sx={{ p: 0, mb: 1 }} />
         <Divider />
         <Box mt={1}>
           <Typography
